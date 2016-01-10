@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.zena.sensorapp2.app.MainActivity">
+
+	<TextView
+		android:layout_width="200dp"
+		android:layout_height="50dp"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:id="@+id/xView"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true"
+		/>
+
+	<TextView
+		android:layout_width="200dp"
+		android:layout_height="50dp"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:id="@+id/yView"
+		android:layout_alignTop="@+id/xView"
+		android:layout_toRightOf="@+id/xView"
+		/>
+
+	<TextView
+		android:layout_width="200dp"
+		android:layout_height="50dp"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:id="@+id/zView"
+		android:layout_alignTop="@+id/yView"
+		android:layout_toRightOf="@+id/yView"
+		/>
+
+	<ProgressBar
+		style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/progressBar"
+		android:layout_above="@+id/xView"
+		android:layout_alignParentLeft="true"
+		android:max="100"
+		android:progress="0"
+		android:indeterminate="false"
+		android:layout_toLeftOf="@+id/yView"/>
+
+	<ProgressBar
+		style="?android:attr/progressBarStyleHorizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/progressleft"
+		android:layout_toRightOf="@+id/progressBar"
+		android:layout_above="@+id/xView"
+		android:layout_alignRight="@+id/yView"
+		android:max="100"
+		android:progress="5"
+		android:indeterminate="false"
+		android:mirrorForRtl="false"
+		/>
+
+	<ProgressBar
+		style="?android:attr/progressBarStyleHorizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/progressright"
+		android:layout_toRightOf="@+id/progressleft"
+		android:layout_above="@+id/zView"
+		android:layout_alignParentRight="true"
+		android:max="100"
+		android:progress="5"
+		android:indeterminate="false"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:text="Left"
+		android:id="@+id/labelTwo"
+		android:layout_above="@+id/progressleft"
+		android:layout_toRightOf="@+id/progressBar"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:text="Right"
+		android:id="@+id/labelThree"
+		android:layout_above="@+id/progressright"
+		android:layout_alignLeft="@+id/progressright"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:id="@+id/labelOne"
+		android:layout_above="@+id/progressBar"
+		android:layout_alignParentLeft="true"/>
+
+	<ListView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/listView"
+		android:layout_alignParentTop="true"
+		android:layout_alignParentLeft="true"
+		android:layout_above="@+id/labelTwo"
+		android:layout_alignRight="@+id/progressleft"
+		tools:listitem="@android:layout/simple_list_item_single_choice"
+		android:clickable="true"/>
+
+	<ListView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/bluetoothListView"
+		android:layout_toRightOf="@+id/progressleft"
+		android:layout_above="@+id/labelThree"
+		android:layout_below="@+id/textView"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:text="Bluetooth Devices"
+		android:id="@+id/textView"
+		android:layout_alignParentTop="true"
+		android:layout_toRightOf="@+id/labelThree"
+		android:layout_gravity="center"/>
+
+
+</RelativeLayout>
